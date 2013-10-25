@@ -2,11 +2,7 @@ var cookbook = [
     {
         rank: 0,
         recipes: [
-            {
-  "type": "recipe",
-  "result": "ok",
-  "results": 1,
-  "payload": {
+             {
     "id": 114,
     "created_at": "2013-07-20 11:09:43",
     "updated_at": "2013-10-25 13:53:16",
@@ -78,12 +74,7 @@ var cookbook = [
     "campaigns": [
       
     ]
-  }
-}, {
-  "type": "recipe",
-  "result": "ok",
-  "results": 1,
-  "payload": {
+  }, {
     "id": 510,
     "created_at": "2013-07-20 11:09:43",
     "updated_at": "2013-10-25 13:55:03",
@@ -182,16 +173,11 @@ var cookbook = [
       
     ]
   }
-}
         ]
     }, {
         rank: 1,
         recipes: [
             {
-  "type": "recipe",
-  "result": "ok",
-  "results": 1,
-  "payload": {
     "id": 1,
     "created_at": "2013-07-20 11:09:43",
     "updated_at": "2013-10-25 13:52:09",
@@ -367,12 +353,7 @@ var cookbook = [
     "campaigns": [
       
     ]
-  }
-}, {
-  "type": "recipe",
-  "result": "ok",
-  "results": 1,
-  "payload": {
+  }, {
     "id": 107,
     "created_at": "2013-07-20 11:09:43",
     "updated_at": "2013-10-25 13:50:43",
@@ -523,16 +504,11 @@ var cookbook = [
       
     ]
   }
-}
         ]
     }, {
         rank: 2,
         recipes: [
             {
-  "type": "recipe",
-  "result": "ok",
-  "results": 1,
-  "payload": {
     "id": 249,
     "created_at": "2013-07-20 11:09:43",
     "updated_at": "2013-10-25 13:16:03",
@@ -631,7 +607,6 @@ var cookbook = [
       
     ]
   }
-}
         ]
     }
 ];
