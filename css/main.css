@@ -1,0 +1,37 @@
+
+body {
+    font-family: sans-serif;
+    font-size: 14pt;
+    color: dimgray;
+    background-color: pink;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 0;
+    margin-top: 0;
+    text-align: right;
+}
+
+main {
+    border-bottom: black 1px solid;
+    border-top: black 1px solid;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: Khaki;
+}
