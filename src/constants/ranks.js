@@ -1,9 +1,12 @@
 module.exports = [
     {
-        name: "keukenhulpje"
+        name: "keukenhulpje",
+        order: 0
     },{
-        name: "sous-chef"
+        name: "sous-chef",
+        order: 1
     }, {
-        name: "chef"
+        name: "chef",
+        order: 2
     }
 ];

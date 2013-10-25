@@ -1,7 +1,7 @@
 
 var RANKS = require('../constants/ranks');
 
-var EMPTY_COOKBOOK = require('../database/cookbook');
+var EMPTY_COOKBOOK = {}; //require('../database/cookbook');
 
 var player = function(name_, rank_, cookbook_) {
     var _player = {};
