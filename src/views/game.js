@@ -1,6 +1,7 @@
 var view = require('./view');
 var dom = require('../dom/dom');
 var RANKS = require('../constants/ranks');
+var PRODUCTS = require('../database/products');
 
 var view_game = function(game, player, rank, recipe, config) {
 
@@ -38,7 +39,6 @@ var view_game = function(game, player, rank, recipe, config) {
         var squares = products.map(product_to_square);
         var rest = size*size - squares.length;
 
-        var PRODUCTS = [{id:0, image: 'dfdf.jpg'}, {id:2, image: 'sdfdsf.jpg'}];
 
         function random_elt(arr) {
             var ps = arr.length;
@@ -132,7 +132,36 @@ var view_game = function(game, player, rank, recipe, config) {
     actions.forEach(createAction);
 
     function finish() {
-        console.log("Chekckc");
+        var selected_squares = playing_board.querySelectorAll("td.selected");
+        var selected = [];
+        for (var j = 0; j < selected_squares.length; j++) {
+            var sel = selected_squares[j];
+        }
+        var products_obj = {};
+        PRODUCTS.forEach(function(p) {
+            products_obj[p.id] = p;
+        });
+
+        var in_recipe = [];
+
+        function find_in_arr(field, value, arr) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i][field] == value) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        for (var i = 0; i < selected.length; i++) {
+            var sel = selected[i];
+            if (find_in_array('id', sel, recipe.producs)) {
+                in_recipe.push(sel);
+            }
+        }
+
+        var not_in_recipe = [];
+
     }
 
     function stop() {
