@@ -3,16 +3,30 @@ var cookbook = require('./cookbook/cookbook');
 var player = require('./player/player');
 var view_cookbook = require('./views/cookbook');
 var view_level = require('./views/level');
+var view_game = require('./views/game');
 
 var game = function(config) {
     var game_ = {};
     var views = {};
 
-    var p = player("jaap");
+    var current_player = player("jaap");
 
-    var current_view = view_cookbook(game_, p, {});
+    var current_view = view_cookbook(game_, current_player, {});
 
-    function 
+    function show_cookbook(rank, recipe) {
+        current_view.remove();
+        current_view = view_cookbook(game_, current_player, {});
+    }
+
+    function show_game(rank, recipe) {
+        current_view.remove();
+        current_view = view_game(
+                game_,
+                current_player,
+                rank,
+                recipe
+        );
+    }
 
     function show_level_intro(rank, recipe) {
         current_view.remove();
@@ -25,17 +39,13 @@ var game = function(config) {
                     name: 'next',
                     label: 'Start het spel',
                     callback: function() {
-                        show_level_recipe(rank, recipe);
+                        show_game(rank, recipe);
                     }
                 }
                 ]
                 );
     }
 
-    function show_game(rank, recipe) {
-        console.log("Sdfsdf");
-        current_view.remove();
-    }
 
     function show_level_recipe(rank, recipe) {
         current_view.remove();
@@ -56,7 +66,7 @@ var game = function(config) {
                     name: 'again',
                     label: 'Speel het spel opnieuw',
                     callback: function() {
-                        show_level_recipe(rank, recipe);
+                        show_game(rank, recipe);
                     }
                 }
                 ]
@@ -95,7 +105,7 @@ var game = function(config) {
         current_view = view_level(
                 game_,
                 "Level Up!",
-                "<h1>Je bent nu " + RANKS[rank+1] + "</h1>"
+                "<h1>Je bent nu " + RANKS[rank+1] + "</h1>",
                 [
                 {
                     name: 'next',
@@ -116,6 +126,7 @@ var game = function(config) {
     }
 
     // public interface
+    game_.show_cookbook = show_cookbook;
     game_.show_level_intro = show_level_intro;
     game_.show_game = show_game;
     game_.show_level_recipe = show_level_recipe;
